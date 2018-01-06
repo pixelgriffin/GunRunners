@@ -11,6 +11,10 @@ public class MenuSettings : SingletonComponent<MenuSettings> {
 
     public bool toggleGrip = false;
 
+    public bool USE_TRACKPAD = false;
+    public bool USE_TELEPORT = false;
+    public bool USE_JOGGING = true;
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);

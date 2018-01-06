@@ -21,9 +21,18 @@ public class ActivateWithButton : MonoBehaviour {
         {
             if(hand.GetStandardMenuButtonDown())
             {
-                toActivate.gameObject.SetActive(true);
-                toActivate.transform.position = player.transform.position + new Vector3(0f, 0f, 0f);
-                //rotate to look at
+                if (!toActivate.gameObject.activeSelf)
+                {
+                    toActivate.gameObject.SetActive(true);
+                    toActivate.transform.position = player.transform.position + new Vector3(0f, 0f, 0f) + player.hmdTransform.forward * 2f;
+
+                    //rotate to look at
+                    toActivate.transform.rotation = Quaternion.LookRotation(toActivate.transform.position - this.transform.position);
+                }
+                else
+                {
+                    toActivate.gameObject.SetActive(false);
+                }
             }
         }
 	}

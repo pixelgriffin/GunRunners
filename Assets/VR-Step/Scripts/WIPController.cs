@@ -132,6 +132,9 @@ namespace VRStep
 
 		void FixedUpdate()
 		{
+            if (!MenuSettings.Instance.USE_JOGGING)
+                return;
+
 			if(rotateTowardsGaze)
 				PointTowardsGaze();
 
