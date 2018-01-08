@@ -1125,6 +1125,9 @@ MonoBehaviour:
   headDeadZoneMin: 0.05
   headDeadZoneMax: 0.125
   toggleGrip: 0
+  USE_TRACKPAD: 0
+  USE_TELEPORT: 0
+  USE_JOGGING: 1
 --- !u!4 &1590663467
 Transform:
   m_ObjectHideFlags: 0

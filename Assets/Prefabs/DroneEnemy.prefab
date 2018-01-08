@@ -284,7 +284,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336977629469568}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -13.6, y: 1.934, z: -0.8505039}
+  m_LocalPosition: {x: -4.0764933, y: -0.8645711, z: -40.826637}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4197121130345802}
@@ -375,7 +375,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -409,7 +409,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -443,7 +443,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -477,7 +477,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 808e82bc4cd6ba341b88727d48755c88, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -511,7 +511,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -545,7 +545,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 808e82bc4cd6ba341b88727d48755c88, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -579,7 +579,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 808e82bc4cd6ba341b88727d48755c88, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -613,7 +613,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 808e82bc4cd6ba341b88727d48755c88, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -647,7 +647,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: 808e82bc4cd6ba341b88727d48755c88, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -681,7 +681,7 @@ MeshRenderer:
   m_LightProbeUsage: 1
   m_ReflectionProbeUsage: 1
   m_Materials:
-  - {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  - {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -837,7 +837,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  wireframeMaterial: {fileID: 0}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -866,7 +866,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  wireframeMaterial: {fileID: 0}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -928,7 +928,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  wireframeMaterial: {fileID: 0}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -957,7 +957,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  wireframeMaterial: {fileID: 0}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -972,7 +972,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 2100000, guid: a1ec4201dd59b8e48a146cd97960c167, type: 2}
+  wireframeMaterial: {fileID: 0}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
