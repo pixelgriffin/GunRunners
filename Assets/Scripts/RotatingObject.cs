@@ -16,20 +16,17 @@ public class RotatingObject : MonoBehaviour {
             item.isKinematic = true;
         }
 
-        Physics.IgnoreCollision(this.transform.GetChild(0).GetComponent<Collider>(), this.GetComponent <Collider>());
+        Physics.IgnoreCollision(item.transform.Find("Model").GetComponent<Collider>(), this.GetComponent <Collider>());
 
         GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
         Physics.IgnoreCollision(this.GetComponent<Collider>(), playerObj.transform.GetChild(0).GetComponent<Collider>());
-        /*Player player = playerObj.GetComponent<Player>();
-
-        foreach(Hand hand in player.hands)
-        {
-            Physics.IgnoreCollision();
-        }*/
 	}
 	
 	// Update is called once per frame
 	void Update () {
         this.transform.rotation = Quaternion.Euler(this.transform.rotation.eulerAngles.x, this.transform.rotation.eulerAngles.y + 1f, this.transform.rotation.eulerAngles.z);
+
+        if (this.transform.childCount == 0)
+            Destroy(this.gameObject);
 	}
 }
