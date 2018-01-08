@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using Valve.VR.InteractionSystem;
 
 public class RotatingObject : MonoBehaviour {
 
@@ -16,6 +17,15 @@ public class RotatingObject : MonoBehaviour {
         }
 
         Physics.IgnoreCollision(this.transform.GetChild(0).GetComponent<Collider>(), this.GetComponent <Collider>());
+
+        GameObject playerObj = GameObject.FindGameObjectWithTag("Player");
+        Physics.IgnoreCollision(this.GetComponent<Collider>(), playerObj.transform.GetChild(0).GetComponent<Collider>());
+        /*Player player = playerObj.GetComponent<Player>();
+
+        foreach(Hand hand in player.hands)
+        {
+            Physics.IgnoreCollision();
+        }*/
 	}
 	
 	// Update is called once per frame

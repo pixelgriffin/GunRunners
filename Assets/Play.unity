@@ -601,7 +601,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &283308795
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2324,7 +2324,7 @@ GameObject:
   - component: {fileID: 1655839873}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -2884,10 +2884,6 @@ Prefab:
       propertyPath: ignore
       value: 
       objectReference: {fileID: 26359605}
-    - target: {fileID: 4166294619453392, guid: 8c538ede3e2f5214180fca92517e22d0, type: 2}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -45
-      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 8c538ede3e2f5214180fca92517e22d0, type: 2}
   m_IsPrefabParent: 0
