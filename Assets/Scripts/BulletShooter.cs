@@ -5,7 +5,7 @@ using Valve.VR.InteractionSystem;
 
 public class BulletShooter : MonoBehaviour {
 
-    public int bullets = 60;
+    public int bullets = 90;
 
     public float spread = 0.025f;
     public float fireRate = 0.1f;
@@ -87,7 +87,22 @@ public class BulletShooter : MonoBehaviour {
                 }
             }
         }
+        else
+        {
+            //not attached to a hand
+            //no bullets left
+            if(bullets <= 0)
+            {
+                if(!IsInvoking("DestroyGun"))
+                    Invoke("DestroyGun", 1f);
+            }
+        }
 	}
+
+    private void DestroyGun()
+    {
+        Destroy(this.gameObject);
+    }
 
     private void ResetShoot()
     {

@@ -22,7 +22,7 @@ public class DroneController : MonoBehaviour {
 	void Update () {
         if (target)
         {
-            if (Vector3.Distance(this.transform.position, target.position) > 1.5f)
+            if (Vector3.Distance(this.transform.position, target.position) > 4f)
             {
                 //float oldY = this.transform.position.y;
 
