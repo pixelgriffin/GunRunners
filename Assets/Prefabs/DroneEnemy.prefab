@@ -74,9 +74,6 @@ GameObject:
   - component: {fileID: 65604489931412644}
   - component: {fileID: 114271886238428640}
   - component: {fileID: 54250449494878862}
-  - component: {fileID: 114669114275221370}
-  - component: {fileID: 114053006311711206}
-  - component: {fileID: 114440782974339340}
   m_Layer: 0
   m_Name: DroneEnemy
   m_TagString: Enemy
@@ -284,7 +281,7 @@ Transform:
   m_PrefabInternal: {fileID: 100100000}
   m_GameObject: {fileID: 1336977629469568}
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -4.0764933, y: -0.8645711, z: -40.826637}
+  m_LocalPosition: {x: 10.804039, y: 2.654484, z: -57.300816}
   m_LocalScale: {x: 3, y: 3, z: 3}
   m_Children:
   - {fileID: 4197121130345802}
@@ -782,7 +779,7 @@ Rigidbody:
   m_Drag: 1
   m_AngularDrag: 1
   m_UseGravity: 0
-  m_IsKinematic: 0
+  m_IsKinematic: 1
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
@@ -815,17 +812,6 @@ Animator:
   m_WarningMessage: 
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
---- !u!114 &114053006311711206
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336977629469568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b93b6a877adcbf94c89a9d6e0c0e844d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
 --- !u!114 &114137512954091454
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -837,7 +823,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 0}
+  wireframeMaterial: {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -853,7 +839,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   health: 6
-  speed: 1
+  speed: 4
   target: {fileID: 0}
 --- !u!114 &114325387591307964
 MonoBehaviour:
@@ -866,57 +852,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 0}
+  wireframeMaterial: {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
---- !u!114 &114440782974339340
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336977629469568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ffefbea063cab884ca33e5a449e5c22c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  attachmentFlags: 13
-  attachmentPoint: 
-  catchSpeedThreshold: 0
-  restoreOriginalParent: 0
-  attachEaseIn: 0
-  snapAttachEaseInCurve:
-    serializedVersion: 2
-    m_Curve:
-    - serializedVersion: 2
-      time: 0
-      value: 0
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    - serializedVersion: 2
-      time: 1
-      value: 1
-      inSlope: 0
-      outSlope: 0
-      tangentMode: 0
-    m_PreInfinity: 2
-    m_PostInfinity: 2
-    m_RotationOrder: 4
-  snapAttachEaseInTime: 0.15
-  attachEaseInAttachmentNames: []
-  onPickUp:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  onDetachFromHand:
-    m_PersistentCalls:
-      m_Calls: []
-    m_TypeName: UnityEngine.Events.UnityEvent, UnityEngine.CoreModule, Version=0.0.0.0,
-      Culture=neutral, PublicKeyToken=null
-  snapAttachEaseInCompleted: 0
 --- !u!114 &114585116294037840
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -928,24 +867,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 0}
+  wireframeMaterial: {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
---- !u!114 &114669114275221370
-MonoBehaviour:
-  m_ObjectHideFlags: 1
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 100100000}
-  m_GameObject: {fileID: 1336977629469568}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 783750eec4c41da428b7651515146d14, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  velocityAverageFrames: 5
-  angularVelocityAverageFrames: 11
-  estimateOnAwake: 0
 --- !u!114 &114885355950193874
 MonoBehaviour:
   m_ObjectHideFlags: 1
@@ -957,7 +882,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 0}
+  wireframeMaterial: {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1
@@ -972,7 +897,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3f31a49d70ad8f24684aaa7bacf97ca1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wireframeMaterial: {fileID: 0}
+  wireframeMaterial: {fileID: 2100000, guid: 946e4a1a743694e44841aa35bc6ec034, type: 2}
   shatterOnDestroy: 1
   nthTriangle: 25
   explosivePowerModifier: 1

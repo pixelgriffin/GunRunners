@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using VRStep;
 
 public class DroneController : MonoBehaviour {
 
@@ -9,9 +10,12 @@ public class DroneController : MonoBehaviour {
 
     public Transform target;
 
+    private float offsetY = 0;
+
 	// Use this for initialization
 	void Start () {
-		
+        target = StepDetector.instance.hmd;
+        offsetY = Random.Range(0f, 2.5f);
 	}
 	
 	// Update is called once per frame
@@ -20,10 +24,10 @@ public class DroneController : MonoBehaviour {
         {
             if (Vector3.Distance(this.transform.position, target.position) > 1.5f)
             {
-                float oldY = this.transform.position.y;
+                //float oldY = this.transform.position.y;
 
-                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position, Time.deltaTime * speed);
-                this.transform.position = new Vector3(this.transform.position.x, oldY, this.transform.position.z);
+                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position + new Vector3(0, offsetY, 0), Time.deltaTime * speed);
+                //this.transform.position = new Vector3(this.transform.position.x, oldY, this.transform.position.z);
             }
 
             this.transform.LookAt(target);
@@ -31,7 +35,7 @@ public class DroneController : MonoBehaviour {
 
         if (health <= 0f)
         {
-            EnemyManager.Instance.ReduceDroneCount();
+            WaveManager.Instance.DroneDied();
             Destroy(this.gameObject);
         }
 	}

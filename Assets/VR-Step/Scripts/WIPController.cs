@@ -133,7 +133,13 @@ namespace VRStep
 		void FixedUpdate()
 		{
             if (!MenuSettings.Instance.USE_JOGGING)
+            {
+                this._rigidbody.isKinematic = true;
+                this._rigidbody.velocity = Vector3.zero;
+                this._rigidbody.angularVelocity = Vector3.zero;
+
                 return;
+            }
 
 			if(rotateTowardsGaze)
 				PointTowardsGaze();

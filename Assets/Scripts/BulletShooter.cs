@@ -5,6 +5,8 @@ using Valve.VR.InteractionSystem;
 
 public class BulletShooter : MonoBehaviour {
 
+    public int bullets = 60;
+
     public float spread = 0.025f;
     public float fireRate = 0.1f;
     public Transform muzzle;
@@ -30,44 +32,58 @@ public class BulletShooter : MonoBehaviour {
             {
                 if(canShoot)
                 {
-                    Vector3 forward = (muzzle.forward + new Vector3(Random.Range(-spread, spread), Random.Range(-spread, spread), Random.Range(-spread, spread)));
-
-                    bool didHit = false;
-                    RaycastHit hit;
-                    if(Physics.Raycast(muzzle.position, forward, out hit, 100f))
+                    if (bullets > 0)
                     {
-                        //Damage
-                        if(hit.collider.tag == "Enemy")
+                        Vector3 forward = (muzzle.forward + new Vector3(Random.Range(-spread, spread), Random.Range(-spread, spread), Random.Range(-spread, spread)));
+
+                        bool didHit = false;
+                        RaycastHit hit;
+                        if (Physics.Raycast(muzzle.position, forward, out hit, 100f))
                         {
-                            hit.collider.gameObject.GetComponent<DroneController>().Damage(1);
+                            //Damage
+                            if (hit.collider.tag == "Enemy")
+                            {
+                                hit.collider.gameObject.GetComponent<DroneController>().Damage(1);
+                            }
+
+                            didHit = true;
                         }
 
-                        didHit = true;
+                        GameObject bullet = new GameObject("Bullet");
+                        bullet.transform.position = muzzle.position;
+                        LineRenderer lr = bullet.AddComponent<LineRenderer>();
+                        lr.useWorldSpace = true;
+                        lr.SetPosition(0, muzzle.position);
+                        lr.SetPosition(1, didHit ? hit.point : (muzzle.position + forward * 100f));
+
+                        lr.material = bulletTracerMaterial;
+
+                        lr.SetWidth(0.01f, 0f);
+
+                        bullets--;
+
+                        Destroy(bullet, 0.05f);
+
+                        //if(!gunshotSound.isPlaying)
+                        if (canSound)
+                        {
+                            canSound = false;
+                            gunshotSound.Play();
+                            Invoke("ResetSound", 0.05f);
+                        }
+
+                        canShoot = false;
+                        Invoke("ResetShoot", fireRate);
                     }
-
-                    GameObject bullet = new GameObject("Bullet");
-                    bullet.transform.position = muzzle.position;
-                    LineRenderer lr = bullet.AddComponent<LineRenderer>();
-                    lr.useWorldSpace = true;
-                    lr.SetPosition(0, muzzle.position);
-                    lr.SetPosition(1, didHit ? hit.point : (muzzle.position + forward * 100f));
-
-                    lr.material = bulletTracerMaterial;
-
-                    lr.SetWidth(0.01f, 0f);
-
-                    Destroy(bullet, 0.05f);
-
-                    //if(!gunshotSound.isPlaying)
-                    if (canSound)
+                    else
                     {
-                        canSound = false;
-                        gunshotSound.Play();
-                        Invoke("ResetSound", 0.15f);
+                        if (canSound)
+                        {
+                            canSound = false;
+                            //gunshotSound.Play();
+                            Invoke("ResetSound", 0.05f);
+                        }
                     }
-
-                    canShoot = false;
-                    Invoke("ResetShoot", fireRate);
                 }
             }
         }
