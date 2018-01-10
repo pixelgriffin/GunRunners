@@ -25,7 +25,12 @@ public class TrackpadMovement : MonoBehaviour {
                 moveDirection += hand.controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad);
         }
 
-        this.transform.position += player.hmdTransform.forward * (moveDirection.y * MenuSettings.Instance.maxMoveSpeed * Time.deltaTime);
-        this.transform.position += player.hmdTransform.right * (moveDirection.x * MenuSettings.Instance.maxMoveSpeed * Time.deltaTime);
+        Vector3 forwardVector = player.hmdTransform.forward * (moveDirection.y * MenuSettings.Instance.maxMoveSpeed * Time.deltaTime);
+        Vector3 sideVector = player.hmdTransform.right * (moveDirection.x * MenuSettings.Instance.maxMoveSpeed * Time.deltaTime);
+
+        forwardVector.y = 0;
+        sideVector.y = 0;
+
+        this.transform.position += (forwardVector + sideVector);
 	}
 }
