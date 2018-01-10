@@ -6,6 +6,7 @@ TagManager:
   tags:
   - UI
   - Walkable
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -37,7 +38,7 @@ TagManager:
   - Sky
   - ParticleForcesPuddleDetailTest
   - ParticleForcesPuddle
-  - 
+  - NoCollide
   - 
   m_SortingLayers:
   - name: Default

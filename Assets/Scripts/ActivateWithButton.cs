@@ -24,7 +24,7 @@ public class ActivateWithButton : MonoBehaviour {
                 if (!toActivate.gameObject.activeSelf)
                 {
                     toActivate.gameObject.SetActive(true);
-                    toActivate.transform.position = player.transform.position + new Vector3(0f, 0f, 0f) + player.hmdTransform.forward * 2f;
+                    toActivate.transform.position = player.hmdTransform.position + new Vector3(0f, 0f, 0f) + player.hmdTransform.forward * 2f;
 
                     //rotate to look at
                     toActivate.transform.rotation = Quaternion.LookRotation(toActivate.transform.position - this.transform.position);

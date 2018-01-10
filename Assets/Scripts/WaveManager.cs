@@ -24,12 +24,12 @@ public class WaveManager : SingletonComponent<WaveManager> {
 
             for(int i = 0; i < unitsAlive; i++)
             {
-                Instantiate(flyingEnemy, this.transform.position + new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), new Quaternion());
+                Instantiate(flyingEnemy, this.transform.position + new Vector3(Random.Range(-35f, 35f), 0, Random.Range(-35f, 35f)), new Quaternion());
             }
 
             for(int i = 0; i < CURRENT_WAVE; i++)
             {
-                Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-5f, 5f), 0, Random.Range(-5f, 5f)), Quaternion.identity);
+                Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-35f, 35f), 0, Random.Range(-35f, 35f)), Quaternion.identity);
             }
         }
 
