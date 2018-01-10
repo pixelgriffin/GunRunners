@@ -22,14 +22,18 @@ public class DroneController : MonoBehaviour {
 	void Update () {
         if (target)
         {
-            if (Vector3.Distance(this.transform.position, target.position) > 4f)
-            {
-                //float oldY = this.transform.position.y;
+            Vector3 moveVector = Vector3.zero;
 
-                this.transform.position = Vector3.MoveTowards(this.transform.position, target.position + new Vector3(0, offsetY, 0), Time.deltaTime * speed);
-                //this.transform.position = new Vector3(this.transform.position.x, oldY, this.transform.position.z);
+            foreach(GameObject otherDrone in GameObject.FindGameObjectsWithTag("Enemy"))
+            {
+                float dist = Vector3.Distance(this.transform.position, otherDrone.transform.position);
+
+                moveVector += (this.transform.position - otherDrone.transform.position).normalized * (5f - Mathf.Min(dist, 5));
             }
 
+            moveVector -= (this.transform.position - target.position).normalized * Mathf.Min(Vector3.Distance(this.transform.position, target.position) - 2f, 7f);
+
+            this.transform.position += moveVector * Time.deltaTime;
             this.transform.LookAt(target);
         }
 
