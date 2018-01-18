@@ -349,7 +349,7 @@ MonoBehaviour:
   tiltRangeMin: 0.995
   tiltRangeMax: 0.825
   player: {fileID: 1655839870}
-  calibrationText: {fileID: 356880340}
+  calibrationText: {fileID: 0}
 --- !u!136 &26359605
 CapsuleCollider:
   m_ObjectHideFlags: 0
@@ -1120,7 +1120,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd57b0515bef5b241a187a8b29fd59b5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxMoveSpeed: 6
+  maxMoveSpeed: 10
   minMoveSpeed: 2
   headDeadZoneMin: 0.05
   headDeadZoneMax: 0.125
@@ -1150,6 +1150,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1655839871}
   - component: {fileID: 1655839870}
+  - component: {fileID: 1655839872}
   m_Layer: 0
   m_Name: UnityNativeVRController
   m_TagString: Untagged
@@ -1196,6 +1197,18 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1655839872
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1655839869}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: be4b4b2f655c9094c8a6ab419d902e84, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  text: {fileID: 356880340}
 --- !u!1 &1681121156
 GameObject:
   m_ObjectHideFlags: 0

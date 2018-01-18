@@ -20,7 +20,7 @@ public class WaveManager : SingletonComponent<WaveManager> {
         {
             CURRENT_WAVE++;
 
-            unitsAlive = CURRENT_WAVE * 3;
+            unitsAlive = CURRENT_WAVE;
 
             for(int i = 0; i < unitsAlive; i++)
             {

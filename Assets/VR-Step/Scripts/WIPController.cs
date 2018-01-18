@@ -118,7 +118,7 @@ namespace VRStep
 		void Update()
 		{
 			CheckIfOnGround();
-            CheckForUpCalibration();
+            //CheckForUpCalibration();
 
 			if (onGround)
 			{
@@ -147,8 +147,13 @@ namespace VRStep
 			if (timeSinceLastStep > stoppingStepTime)
 				targetForwardVelocity = 0;
 
-			//set velocity based on our target
-			velocityVector = dir * targetForwardVelocity;
+            //set velocity based on our target
+            float dot = Vector3.Dot(Calibrator.Instance.naturalUp, StepDetector.instance.hmd.up);
+
+            //if ((dot < (1f - MenuSettings.Instance.headDeadZoneMin) && dot > (1f - MenuSettings.Instance.headDeadZoneMax)))
+            //{
+                velocityVector = dir * targetForwardVelocity;
+            //}
 
 			if (controllerType == ControllerType.RigidBody)
 			{
@@ -171,7 +176,7 @@ namespace VRStep
 				CheckJump();
 		}
 
-        void CheckForUpCalibration()
+        /*void CheckForUpCalibration()
         {
             if (calibrationText != null)
             {
@@ -193,7 +198,7 @@ namespace VRStep
         void PlayGame()
         {
             SceneManager.LoadScene("Play");
-        }
+        }*/
 
 		void PointTowardsGaze()
 		{
@@ -201,14 +206,10 @@ namespace VRStep
 			currentRotation.y = forwardTransform.rotation.eulerAngles.y;
 			transform.eulerAngles = currentRotation;*/
 
-            float dot = Vector3.Dot(Calibrator.Instance.naturalUp, StepDetector.instance.hmd.up);
-
-            if ((dot < (1f - MenuSettings.Instance.headDeadZoneMin) && dot > (1f - MenuSettings.Instance.headDeadZoneMax)))
-            {
-                dir = StepDetector.instance.hmd.up;
-                dir.y = 0;
-                dir.Normalize();
-            }
+            
+            dir = StepDetector.instance.hmd.up;
+            dir.y = 0;
+            dir.Normalize();
 
             /*Vector3 look = Vector3.RotateTowards(transform.forward, dir, 20f * Time.deltaTime, 0f);
             this.transform.rotation = Quaternion.LookRotation(look);*/
