@@ -30,6 +30,8 @@ public class DroneController : MonoBehaviour {
 
                 moveVector += (this.transform.position - otherDrone.transform.position).normalized * (5f - Mathf.Min(dist, 5));
             }
+            //stop from going under ground
+            moveVector += (Vector3.up) * (5f - Mathf.Min(Vector3.Distance(this.transform.position, new Vector3(this.transform.position.x, 0f, this.transform.position.z)), 5f));
 
             moveVector -= (this.transform.position - target.position).normalized * Mathf.Min(Vector3.Distance(this.transform.position, target.position) - 2f, 7f);
 
