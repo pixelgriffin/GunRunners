@@ -5,6 +5,9 @@ using Valve.VR.InteractionSystem;
 
 public class BulletShooter : MonoBehaviour {
 
+    public Hand attachedHand;
+    public TextMesh ammoText;
+
     public int bullets = 90;
 
     public float spread = 0.025f;
@@ -25,7 +28,7 @@ public class BulletShooter : MonoBehaviour {
 	}
 
 	void Update () {
-       Hand hand = throwable.GetAttachedHand();
+        Hand hand = attachedHand;
         if(hand)
         {
             if(hand.GetStandardShootButton())
@@ -97,6 +100,8 @@ public class BulletShooter : MonoBehaviour {
                     Invoke("DestroyGun", 1f);
             }
         }
+
+        ammoText.text = "" + bullets;
 	}
 
     private void DestroyGun()

@@ -111,6 +111,7 @@ GameObject:
   - component: {fileID: 54937403649013444}
   - component: {fileID: 33098373727862846}
   - component: {fileID: 23891740989098006}
+  - component: {fileID: 114302725646602918}
   m_Layer: 2
   m_Name: RotatingAmmo
   m_TagString: Untagged
@@ -546,6 +547,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: e7a67caa133fb89419c7b1925d3fcc3f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  attachedHand: {fileID: 0}
+  ammoText: {fileID: 0}
   bullets: 90
   spread: 0.025
   fireRate: 0.025
@@ -553,6 +556,17 @@ MonoBehaviour:
   bulletTracerMaterial: {fileID: 2100000, guid: ac48f68663811bb4b9c63f064b706c8d,
     type: 2}
   gunshotSound: {fileID: 82740033426293400}
+--- !u!114 &114302725646602918
+MonoBehaviour:
+  m_ObjectHideFlags: 1
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 100100000}
+  m_GameObject: {fileID: 1832621017956398}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 81e8e1ff87e4281478459cd74b384b13, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!114 &114619328047905004
 MonoBehaviour:
   m_ObjectHideFlags: 1
