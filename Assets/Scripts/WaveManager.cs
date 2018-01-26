@@ -7,7 +7,8 @@ public class WaveManager : SingletonComponent<WaveManager> {
 
     public int dropRange = 30;
 
-    public int CURRENT_WAVE = 0;
+    public int desiredUnits = 5;
+    //public int CURRENT_WAVE = 0;
 
     public GameObject ammo;
     public GameObject flyingEnemy;
@@ -18,7 +19,7 @@ public class WaveManager : SingletonComponent<WaveManager> {
 	}
 
 	void Update () {
-		if(unitsAlive == 0)
+		/*if(unitsAlive == 0)
         {
             CURRENT_WAVE++;
 
@@ -33,9 +34,17 @@ public class WaveManager : SingletonComponent<WaveManager> {
             {
                 Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), Quaternion.identity);
             }
+        }*/
+
+        if(unitsAlive < desiredUnits)
+        {
+            Instantiate(flyingEnemy, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), new Quaternion());
+
+            Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), Quaternion.identity);
+            //Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), Quaternion.identity);
+
+            unitsAlive++;
         }
-
-
 	}
 
     public void DroneDied()

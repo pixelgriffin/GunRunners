@@ -5,7 +5,7 @@ using UnityEngine;
 [RequireComponent(typeof(TextMesh))]
 public class RoundTimer : MonoBehaviour {
 
-    public int minutes = 2;
+    public float minutes = 2;
 
     private float timeLeft = 0;
     private TextMesh textMesh;
@@ -22,6 +22,7 @@ public class RoundTimer : MonoBehaviour {
         if(timeLeft < 0)
         {
             timeLeft = 0;
+            Statistics.Instance.allowDataEdit = false;
         }
 
         int minsLeft = ((int)timeLeft / 60);

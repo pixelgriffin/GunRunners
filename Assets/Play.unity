@@ -863,6 +863,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropRange: 30
+  desiredUnits: 5
   CURRENT_WAVE: 0
   ammo: {fileID: 1832621017956398, guid: adfe190d094a5644fa3a5faedded0eb4, type: 2}
   flyingEnemy: {fileID: 1336977629469568, guid: befd7132d23bf3a449397709d6a95b51,
@@ -876,10 +877,9 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 4.41, y: 7.3, z: -49.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_Children:
-  - {fileID: 540164198}
+  m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &308284867
 GameObject:
@@ -1312,12 +1312,12 @@ Transform:
   m_PrefabParentObject: {fileID: 0}
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 540164197}
-  m_LocalRotation: {x: -0.7071068, y: 0, z: 0, w: 0.7071068}
-  m_LocalPosition: {x: 0, y: 18, z: 0}
+  m_LocalRotation: {x: -0.7071068, y: -0, z: 0, w: 0.7071068}
+  m_LocalPosition: {x: 4.41, y: 25.3, z: -49.11}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
-  m_Father: {fileID: 283308796}
-  m_RootOrder: 0
+  m_Father: {fileID: 0}
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!102 &540164199
 TextMesh:
@@ -4077,7 +4077,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 4967756568021824, guid: adfe190d094a5644fa3a5faedded0eb4, type: 2}
       propertyPath: m_RootOrder
-      value: 7
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 0}
       propertyPath: ignore

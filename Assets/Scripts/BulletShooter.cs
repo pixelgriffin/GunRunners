@@ -47,6 +47,9 @@ public class BulletShooter : MonoBehaviour {
                             if (hit.collider.tag == "Enemy")
                             {
                                 hit.collider.gameObject.GetComponent<DroneController>().Damage(1);
+
+                                if (Statistics.Instance.allowDataEdit)
+                                    Statistics.Instance.data.totalBulletsHit++;
                             }
 
                             didHit = true;
@@ -64,6 +67,8 @@ public class BulletShooter : MonoBehaviour {
                         lr.SetWidth(0.01f, 0f);
 
                         bullets--;
+                        if (Statistics.Instance.allowDataEdit)
+                            Statistics.Instance.data.totalBulletsFired++;
 
                         Destroy(bullet, 0.05f);
 
@@ -101,7 +106,8 @@ public class BulletShooter : MonoBehaviour {
             }
         }
 
-        ammoText.text = "" + bullets;
+        if(ammoText != null)
+            ammoText.text = "" + bullets;
 	}
 
     private void DestroyGun()

@@ -17,6 +17,8 @@ public class AddAmmoOnCollision : MonoBehaviour {
             foreach(GameObject smg in GameObject.FindGameObjectsWithTag("SMG"))
             {
                 smg.GetComponent<BulletShooter>().bullets += 20;
+                if (Statistics.Instance.allowDataEdit)
+                    Statistics.Instance.data.totalBulletsCollected += 20;
             }
 
             Destroy(this.gameObject);

@@ -66,10 +66,10 @@ public class DroneController : MonoBehaviour {
 
                 lr.SetPosition(0, this.transform.position);
                 lr.SetPosition(1, shootTarget - new Vector3(0f, 1f, 0f));
-                lr.startColor = new Color(255, 0, 0, (shootTimer + 1f) / shootChargeTime);
-                lr.endColor = new Color(255, 0, 0, (shootTimer + 1f) / shootChargeTime);
+                lr.startColor = new Color(255, 0.5f, 0, (shootTimer + 1f) / shootChargeTime);
+                lr.endColor = new Color(255, 0.5f, 0, (shootTimer + 1f) / shootChargeTime);
 
-                lr.material.color = new Color(255, 0, 0, (shootTimer + 1f) / shootChargeTime);
+                lr.material.color = new Color(255, 0.5f, 0, (shootTimer + 1f) / shootChargeTime);
 
                 if (shootTimer >= shootChargeTime)
                 {
@@ -84,6 +84,10 @@ public class DroneController : MonoBehaviour {
                             Debug.Log("Took damage");
                             GameObject.FindGameObjectWithTag("Fader").GetComponent<MaterialFader>().ResetFade();
                             GameObject.FindGameObjectWithTag("Fader").GetComponent<MaterialFader>().fadeIn = true;
+
+                            //Log damage
+                            if (Statistics.Instance.allowDataEdit)
+                                Statistics.Instance.data.damageTaken++;
                         }
                     }
 
@@ -102,6 +106,10 @@ public class DroneController : MonoBehaviour {
         if (health <= 0f)
         {
             WaveManager.Instance.DroneDied();
+
+            if(Statistics.Instance.allowDataEdit)
+                Statistics.Instance.data.totalEnemiesDestroyed++;
+
             Destroy(this.gameObject);
         }
 	}
