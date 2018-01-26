@@ -365,16 +365,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 153f5472ef8a1cb4ba1e4db2c56102b2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxForwardVelocity: 6
-  minForwardVelocity: 2
+  maxForwardVelocity: 10
+  minForwardVelocity: 4
   dampingEnabled: 1
   dampingValue: 0.95
-  minStepTime: 0.2
+  minStepTime: 0.5
   maxStepTime: 1.3
   stoppingStepTime: 1.3
   rotateTowardsGaze: 1
   forwardTransform: {fileID: 1870931979}
-  jumpEnabled: 1
+  jumpEnabled: 0
   jumpDetectionThreshold: 2.5
   onGround: 0
   groundLayerMask:
@@ -1814,7 +1814,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: arcDistance
-      value: 6
+      value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: m_LocalScale.x
@@ -4173,22 +4173,22 @@ Prefab:
     - target: {fileID: 224301012553767638, guid: 0d6afb91c5e1852478f320195ad12d1f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224529536015898618, guid: 0d6afb91c5e1852478f320195ad12d1f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224914423610200378, guid: 0d6afb91c5e1852478f320195ad12d1f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 224806605189875572, guid: 0d6afb91c5e1852478f320195ad12d1f,
         type: 2}
       propertyPath: m_LocalPosition.x
-      value: -70
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 1546894802999116, guid: 0d6afb91c5e1852478f320195ad12d1f, type: 2}
       propertyPath: m_IsActive
@@ -4260,6 +4260,21 @@ Prefab:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 114109709388962488, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536139286996376, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536139286996376, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114536139286996376, guid: 0d6afb91c5e1852478f320195ad12d1f,
         type: 2}
       propertyPath: m_Color.b
       value: 1

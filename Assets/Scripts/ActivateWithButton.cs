@@ -28,7 +28,7 @@ public class ActivateWithButton : MonoBehaviour {
                     toActivate.transform.position = new Vector3(toActivate.transform.position.x, player.hmdTransform.position.y, toActivate.transform.position.z);
 
                     //rotate to look at
-                    toActivate.transform.rotation = Quaternion.LookRotation(this.transform.position - toActivate.transform.position);
+                    toActivate.transform.rotation = Quaternion.LookRotation(toActivate.transform.position - player.hmdTransform.position);
                 }
                 else
                 {
