@@ -5,6 +5,8 @@ using UnityEngine;
 public class WaveManager : SingletonComponent<WaveManager> {
 
 
+    public int dropRange = 30;
+
     public int CURRENT_WAVE = 0;
 
     public GameObject ammo;
@@ -24,12 +26,12 @@ public class WaveManager : SingletonComponent<WaveManager> {
 
             for(int i = 0; i < unitsAlive; i++)
             {
-                Instantiate(flyingEnemy, this.transform.position + new Vector3(Random.Range(-35f, 35f), 0, Random.Range(-35f, 35f)), new Quaternion());
+                Instantiate(flyingEnemy, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), new Quaternion());
             }
 
             for(int i = 0; i < CURRENT_WAVE; i++)
             {
-                Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-35f, 35f), 0, Random.Range(-35f, 35f)), Quaternion.identity);
+                Instantiate(ammo, this.transform.position + new Vector3(Random.Range(-dropRange, dropRange), 0, Random.Range(-dropRange, dropRange)), Quaternion.identity);
             }
         }
 
