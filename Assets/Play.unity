@@ -768,6 +768,48 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 128789437}
   m_Mesh: {fileID: 4300000, guid: 4ca147bdeb48c8c4ebeb481da32841fd, type: 3}
+--- !u!1001 &157827330
+Prefab:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    m_TransformParent: {fileID: 0}
+    m_Modifications:
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalPosition.x
+      value: -1.3603933
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalPosition.y
+      value: -5.6000896
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalPosition.z
+      value: -23.371403
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4174728236216938, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+      propertyPath: m_RootOrder
+      value: 9
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+  m_ParentPrefab: {fileID: 100100000, guid: 0172222599c36c645984c82c4d80db67, type: 2}
+  m_IsPrefabParent: 0
 --- !u!1 &161979378
 GameObject:
   m_ObjectHideFlags: 0
@@ -864,7 +906,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   dropRange: 30
   desiredUnits: 5
-  CURRENT_WAVE: 0
   ammo: {fileID: 1832621017956398, guid: adfe190d094a5644fa3a5faedded0eb4, type: 2}
   flyingEnemy: {fileID: 1336977629469568, guid: befd7132d23bf3a449397709d6a95b51,
     type: 2}
@@ -1814,7 +1855,7 @@ Prefab:
       objectReference: {fileID: 0}
     - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: arcDistance
-      value: 4
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: 475244, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: m_LocalScale.x
@@ -1831,6 +1872,10 @@ Prefab:
     - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
       propertyPath: traceLayerMask.m_Bits
       value: 3221225467
+      objectReference: {fileID: 0}
+    - target: {fileID: 11445746, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
+      propertyPath: arcGrowthRate
+      value: 4
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 7a135b1a2cb9c8f488d4dd00c55ab283, type: 2}
@@ -3800,6 +3845,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   toActivate: {fileID: 1487923406}
+  pauseGame: 1
 --- !u!114 &1655839873
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3823,6 +3869,7 @@ GameObject:
   - component: {fileID: 1681121159}
   - component: {fileID: 1681121158}
   - component: {fileID: 1681121157}
+  - component: {fileID: 1681121161}
   m_Layer: 0
   m_Name: Camera
   m_TagString: MainCamera
@@ -3890,6 +3937,17 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
+--- !u!114 &1681121161
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_PrefabParentObject: {fileID: 0}
+  m_PrefabInternal: {fileID: 0}
+  m_GameObject: {fileID: 1681121156}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 44fa3070012573749be0d810fafbf293, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1750392510
 GameObject:
   m_ObjectHideFlags: 0

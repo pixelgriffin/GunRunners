@@ -7,6 +7,7 @@ using Valve.VR.InteractionSystem;
 public class ActivateWithButton : MonoBehaviour {
 
     public GameObject toActivate;
+    public bool pauseGame = false;
 
     private Player player;
 
@@ -29,10 +30,16 @@ public class ActivateWithButton : MonoBehaviour {
 
                     //rotate to look at
                     toActivate.transform.rotation = Quaternion.LookRotation(toActivate.transform.position - player.hmdTransform.position);
+
+                    if (pauseGame)
+                        DroneController.DRONE_TIME = 0f;
                 }
                 else
                 {
                     toActivate.gameObject.SetActive(false);
+
+                    if (pauseGame)
+                        DroneController.DRONE_TIME = 1f;
                 }
             }
         }

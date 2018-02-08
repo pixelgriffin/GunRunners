@@ -35,6 +35,8 @@ namespace Valve.VR.InteractionSystem
         public float meshFadeTime = 0.2f;
 
         public float arcDistance = 10.0f;
+        public float arcGrowthRate = 1f;
+        private float realArcDistance = 0f;
 
         [Header("Effects")]
         public Transform onActivateObjectTransform;
@@ -246,6 +248,8 @@ namespace Valve.VR.InteractionSystem
                         if (pointerHand == hand) //This is the pointer hand
                         {
                             TryTeleportPlayer();
+
+                            realArcDistance = 0f;
                         }
                     }
                 }
@@ -322,7 +326,10 @@ namespace Valve.VR.InteractionSystem
             bool showPlayAreaPreview = false;
             Vector3 playerFeetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
 
-            Vector3 arcVelocity = pointerDir * arcDistance;
+            //Vector3 arcVelocity = pointerDir * arcDistance;
+            Vector3 arcVelocity = pointerDir * realArcDistance;
+
+            realArcDistance = Mathf.Lerp(realArcDistance, arcDistance, arcGrowthRate * Time.deltaTime);
 
             //TeleportMarkerBase hitTeleportMarker = null;
             bool hitWalkable = false;

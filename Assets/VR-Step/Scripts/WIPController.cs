@@ -221,16 +221,16 @@ namespace VRStep
 			{
 				if (timeSinceLastStep > maxStepTime)
 				{
-                    targetForwardVelocity = MenuSettings.Instance.minMoveSpeed;//minForwardVelocity;
+                    targetForwardVelocity = MenuSettings.Instance.minMoveSpeed * 1.25f;//minForwardVelocity;
 				}
 				else if (timeSinceLastStep <= minStepTime)
 				{
-                    targetForwardVelocity = MenuSettings.Instance.maxMoveSpeed;//maxForwardVelocity;
+                    targetForwardVelocity = MenuSettings.Instance.maxMoveSpeed * 1.25f;//maxForwardVelocity;
 				}
 				else
 				{
 					float t = (timeSinceLastStep - minStepTime) / (maxStepTime - minStepTime);
-					float potentialVelocity = Mathf.Lerp(MenuSettings.Instance.maxMoveSpeed, MenuSettings.Instance.minMoveSpeed, t);
+					float potentialVelocity = Mathf.Lerp(MenuSettings.Instance.maxMoveSpeed, MenuSettings.Instance.minMoveSpeed, t) * 1.25f;
 
 					if (potentialVelocity >= targetForwardVelocity)
 						targetForwardVelocity = potentialVelocity;

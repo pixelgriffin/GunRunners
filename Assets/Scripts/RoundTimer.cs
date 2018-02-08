@@ -17,7 +17,7 @@ public class RoundTimer : MonoBehaviour {
 	}
 	
 	void Update () {
-        timeLeft -= Time.deltaTime;
+        timeLeft -= Time.deltaTime * DroneController.DRONE_TIME;
         
         if(timeLeft < 0)
         {

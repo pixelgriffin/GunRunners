@@ -5,12 +5,16 @@ using VRStep;
 
 public class DroneController : MonoBehaviour {
 
+    public static float DRONE_TIME = 1f;
+
     public float shootChargeTime = 4f;
 
     public float health = 10f;
     public float speed = 3f;
 
     public Transform target;
+
+    public GameObject explosionSoundPrefab;
 
     private float offsetY = 0;
 
@@ -62,7 +66,7 @@ public class DroneController : MonoBehaviour {
             }
             else
             {
-                shootTimer += Time.deltaTime;
+                shootTimer += Time.deltaTime * DRONE_TIME;
 
                 lr.SetPosition(0, this.transform.position);
                 lr.SetPosition(1, shootTarget - new Vector3(0f, 1f, 0f));
@@ -85,6 +89,8 @@ public class DroneController : MonoBehaviour {
                             GameObject.FindGameObjectWithTag("Fader").GetComponent<MaterialFader>().ResetFade();
                             GameObject.FindGameObjectWithTag("Fader").GetComponent<MaterialFader>().fadeIn = true;
 
+                            GetComponent<AudioSource>().Play();
+
                             //Log damage
                             if (Statistics.Instance.allowDataEdit)
                                 Statistics.Instance.data.damageTaken++;
@@ -100,7 +106,7 @@ public class DroneController : MonoBehaviour {
                 this.transform.LookAt(shootTarget);
             }
 
-            this.transform.position += moveVector * Time.deltaTime;
+            this.transform.position += moveVector * Time.deltaTime * DRONE_TIME;
         }
 
         if (health <= 0f)
@@ -109,6 +115,8 @@ public class DroneController : MonoBehaviour {
 
             if(Statistics.Instance.allowDataEdit)
                 Statistics.Instance.data.totalEnemiesDestroyed++;
+
+            Instantiate(explosionSoundPrefab, this.transform.position, Quaternion.identity);
 
             Destroy(this.gameObject);
         }

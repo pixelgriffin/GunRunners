@@ -14,6 +14,10 @@ public class Statistics : SingletonComponent<Statistics> {
         public int totalBulletsCollected;
         public int totalEnemiesDestroyed;
         public float accuracy;//Calculate yourself
+        public float rightTime;
+        public float leftTime;
+        public float forwardTime;
+        public float backTime;
     };
 
     public SaveData data;
@@ -38,6 +42,10 @@ public class Statistics : SingletonComponent<Statistics> {
             sw.WriteLine("totalBulletsCollected=" + data.totalBulletsCollected);
             sw.WriteLine("totalEnemiesDestroyed=" + data.totalEnemiesDestroyed);
             sw.WriteLine("accuracy=" + (float)(((float)data.totalBulletsHit / (float)data.totalBulletsFired) * 100f));
+            sw.WriteLine("rightTiltTime=" + data.rightTime);
+            sw.WriteLine("leftTiltTime=" + data.leftTime);
+            sw.WriteLine("forwardTiltTime=" + data.forwardTime);
+            sw.WriteLine("backTiltTime=" + data.backTime);
         }
     }
 }
