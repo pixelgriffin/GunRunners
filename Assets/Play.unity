@@ -905,7 +905,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   dropRange: 30
-  desiredUnits: 5
+  desiredUnits: 4
   ammo: {fileID: 1832621017956398, guid: adfe190d094a5644fa3a5faedded0eb4, type: 2}
   flyingEnemy: {fileID: 1336977629469568, guid: befd7132d23bf3a449397709d6a95b51,
     type: 2}
@@ -2598,7 +2598,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff96ce8151ea82946a04175e4c6eca68, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0
@@ -4740,7 +4740,7 @@ AudioSource:
   OutputAudioMixerGroup: {fileID: 0}
   m_audioClip: {fileID: 8300000, guid: ff96ce8151ea82946a04175e4c6eca68, type: 3}
   m_PlayOnAwake: 0
-  m_Volume: 0.15
+  m_Volume: 0.3
   m_Pitch: 1
   Loop: 0
   Mute: 0

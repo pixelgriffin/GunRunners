@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class AddAmmoOnCollision : MonoBehaviour {
 
+    public GameObject reloadSoundPrefab;
+
     private void OnCollisionEnter(Collision collision)
     {
         Debug.Log("collided");
@@ -20,6 +22,8 @@ public class AddAmmoOnCollision : MonoBehaviour {
                 if (Statistics.Instance.allowDataEdit)
                     Statistics.Instance.data.totalBulletsCollected += 20;
             }
+
+            Instantiate(reloadSoundPrefab, this.transform.position, Quaternion.identity);
 
             Destroy(this.gameObject);
         }

@@ -567,6 +567,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 81e8e1ff87e4281478459cd74b384b13, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  reloadSoundPrefab: {fileID: 1005354378240332, guid: 23a6a6a2ea1a91742af6e12fdef00c39,
+    type: 2}
 --- !u!114 &114619328047905004
 MonoBehaviour:
   m_ObjectHideFlags: 1

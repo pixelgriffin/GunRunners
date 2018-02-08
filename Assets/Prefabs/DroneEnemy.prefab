@@ -1045,7 +1045,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   shootChargeTime: 2.5
   health: 6
-  speed: 4
+  speed: 3
   target: {fileID: 0}
   explosionSoundPrefab: {fileID: 1005354378240332, guid: 0172222599c36c645984c82c4d80db67,
     type: 2}
