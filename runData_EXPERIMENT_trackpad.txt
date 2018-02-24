@@ -1,0 +1,12 @@
+02/22/2018 3:41 PM
+damageTaken=0
+totalBulletsHit=0
+totalBulletsFired=0
+totalBulletsCollected=0
+totalEnemiesDestroyed=0
+accuracy=NaN
+rightTiltTime=0
+leftTiltTime=0
+forwardTiltTime=0
+backTiltTime=0
+deadZoneTime=0

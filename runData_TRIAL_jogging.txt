@@ -1,0 +1,12 @@
+02/23/2018 2:13 PM
+damageTaken=65
+totalBulletsHit=26
+totalBulletsFired=159
+totalBulletsCollected=40
+totalEnemiesDestroyed=4
+accuracy=16.3522
+rightTiltTime=3.066662
+leftTiltTime=42.2
+forwardTiltTime=12.80011
+backTiltTime=21.05312
+deadZoneTime=14.81124

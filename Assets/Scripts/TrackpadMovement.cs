@@ -35,5 +35,13 @@ public class TrackpadMovement : MonoBehaviour {
         sideVector.y = 0;
 
         this.transform.position += (forwardVector + sideVector);
+
+        if (Statistics.Instance.allowDataEdit)
+        {
+            if ((forwardVector + sideVector) != Vector3.zero)
+            {
+                Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+            }
+        }
 	}
 }

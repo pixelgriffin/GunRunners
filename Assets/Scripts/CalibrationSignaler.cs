@@ -35,6 +35,6 @@ public class CalibrationSignaler : MonoBehaviour {
 
     void SwitchScene()
     {
-        SceneManager.LoadScene("Play");
+        SceneManager.LoadScene("Menu");
     }
 }

@@ -331,6 +331,11 @@ namespace Valve.VR.InteractionSystem
 
             realArcDistance = Mathf.Lerp(realArcDistance, arcDistance, arcGrowthRate * Time.deltaTime);
 
+            if(Statistics.Instance.allowDataEdit)
+            {
+                Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+            }
+
             //TeleportMarkerBase hitTeleportMarker = null;
             bool hitWalkable = false;
 

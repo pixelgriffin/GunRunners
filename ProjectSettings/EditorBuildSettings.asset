@@ -12,5 +12,8 @@ EditorBuildSettings:
     path: Assets/Calibrate.unity
     guid: 2d7264999d77cb041a58185377dc9525
   - enabled: 1
+    path: Assets/Menu.unity
+    guid: b4f084be78d0a1148971da4b57aa0613
+  - enabled: 1
     path: Assets/Play.unity
     guid: d726414c48b872a45b8bfe030a43ece9

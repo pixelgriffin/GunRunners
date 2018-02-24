@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(TextMesh))]
 public class RoundTimer : MonoBehaviour {
@@ -23,10 +24,32 @@ public class RoundTimer : MonoBehaviour {
         {
             timeLeft = 0;
             Statistics.Instance.allowDataEdit = false;
+
+            string moveType = "";
+            if(MenuSettings.Instance.USE_JOGGING)
+            {
+                moveType = "jogging";
+            }
+            else if(MenuSettings.Instance.USE_TELEPORT)
+            {
+                moveType = "teleport";
+            }
+            else if(MenuSettings.Instance.USE_TRACKPAD)
+            {
+                moveType = "trackpad";
+            }
+
+            Statistics.Instance.SaveDataToReadableFile("runData_" + (MenuSettings.Instance.IS_EXPERIMENT ? "EXPERIMENT" : "TRIAL") + "_" + moveType + ".txt");
+            Statistics.Instance.data = new Statistics.SaveData();
+
+            SceneManager.LoadScene("Menu");
         }
 
         int minsLeft = ((int)timeLeft / 60);
 
-        textMesh.text = minsLeft + ":" + (((int)timeLeft) - (minsLeft * 60));
+        if ((((int)timeLeft) - (minsLeft * 60)) < 10)//seconds less than ten, add a 0 (to look nice)
+            textMesh.text = minsLeft + ":0" + (((int)timeLeft) - (minsLeft * 60));
+        else
+            textMesh.text = minsLeft + ":" + (((int)timeLeft) - (minsLeft * 60));
 	}
 }

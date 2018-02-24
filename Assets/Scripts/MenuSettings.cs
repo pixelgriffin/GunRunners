@@ -15,6 +15,8 @@ public class MenuSettings : SingletonComponent<MenuSettings> {
     public bool USE_TELEPORT = false;
     public bool USE_JOGGING = true;
 
+    public bool IS_EXPERIMENT = false;
+
     private void Start()
     {
         DontDestroyOnLoad(this.gameObject);

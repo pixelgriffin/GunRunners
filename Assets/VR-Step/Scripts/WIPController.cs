@@ -85,13 +85,9 @@ namespace VRStep
 		[HideInInspector]
 		public Vector3 velocityVector;
 
-        public float tiltRangeMin = 0.995f;
-        public float tiltRangeMax = 0.825f;
+        public float tiltDeadzoneRadius = 0.1f;
 
         private Vector3 dir;
-
-        public Player player;
-        public TextMesh calibrationText;
 
         void Start()
 		{
@@ -128,7 +124,15 @@ namespace VRStep
 			{
 				_jumpCooldownTimer -= Time.deltaTime;
 			}
-		}
+
+            if (Statistics.Instance.allowDataEdit)
+            {
+                if (targetForwardVelocity > 0f)
+                {
+                    Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+                }
+            }
+        }
 
 		void FixedUpdate()
 		{
@@ -202,17 +206,67 @@ namespace VRStep
 
 		void PointTowardsGaze()
 		{
-            /*Vector3 currentRotation = transform.eulerAngles;
-			currentRotation.y = forwardTransform.rotation.eulerAngles.y;
-			transform.eulerAngles = currentRotation;*/
-
-            
             dir = StepDetector.instance.hmd.up;
             dir.y = 0;
+
+            Vector3 headForward = StepDetector.instance.hmd.forward;
+            headForward.y = 0;
+            headForward.Normalize();
+
+            if(dir.magnitude < tiltDeadzoneRadius)//tilt direction is within deadzone
+            {
+                if (Statistics.Instance.allowDataEdit)
+                    Statistics.Instance.data.deadZoneTime += Time.deltaTime;
+
+                dir = headForward;//just go forward
+                return;
+            }
             dir.Normalize();
 
-            /*Vector3 look = Vector3.RotateTowards(transform.forward, dir, 20f * Time.deltaTime, 0f);
-            this.transform.rotation = Quaternion.LookRotation(look);*/
+            float ang = Vector3.Dot(headForward, dir);
+            
+            // \ | /
+            //__\|/__
+            //  /|\
+            // / | \
+
+            if(ang <= 1f && ang > 0.5f)//45 degree angles from Y, 90 degrees total
+            {
+                dir = headForward;
+
+                if (Statistics.Instance.allowDataEdit)
+                    Statistics.Instance.data.forwardTime += Time.deltaTime;
+            }
+            else if(ang <= 0.5f && ang > -0.5f)
+            {
+                //right/left
+                Vector3 headRight = StepDetector.instance.hmd.right;
+                headRight.y = 0;
+                headRight.Normalize();
+
+                float isRight = Vector3.Dot(headRight, dir);
+                if(isRight > 0f)
+                {
+                    dir = headRight;
+
+                    if (Statistics.Instance.allowDataEdit)
+                        Statistics.Instance.data.rightTime += Time.deltaTime;
+                }
+                else
+                {
+                    dir = -headRight;
+
+                    if (Statistics.Instance.allowDataEdit)
+                        Statistics.Instance.data.leftTime += Time.deltaTime;
+                }
+            }
+            else if(ang <= -0.5f && ang > -1f)
+            {
+                dir = -headForward;
+
+                if (Statistics.Instance.allowDataEdit)
+                    Statistics.Instance.data.backTime += Time.deltaTime;
+            }
 		}
 
 		void OnStep()

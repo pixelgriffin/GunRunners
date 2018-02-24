@@ -49,7 +49,12 @@ public class BulletShooter : MonoBehaviour {
                                 hit.collider.gameObject.GetComponent<DroneController>().Damage(1);
 
                                 if (Statistics.Instance.allowDataEdit)
-                                    Statistics.Instance.data.totalBulletsHit++;
+                                {
+                                    if (hand.GuessCurrentHandType() == Hand.HandType.Left)
+                                        Statistics.Instance.data.totalLeftBulletsHit++;
+                                    else if (hand.GuessCurrentHandType() == Hand.HandType.Right)
+                                        Statistics.Instance.data.totalRightBulletsHit++;
+                                }
                             }
 
                             didHit = true;
@@ -68,7 +73,12 @@ public class BulletShooter : MonoBehaviour {
 
                         bullets--;
                         if (Statistics.Instance.allowDataEdit)
-                            Statistics.Instance.data.totalBulletsFired++;
+                        {
+                            if (hand.GuessCurrentHandType() == Hand.HandType.Left)
+                                Statistics.Instance.data.totalLeftBulletsFired++;
+                            else if (hand.GuessCurrentHandType() == Hand.HandType.Right)
+                                Statistics.Instance.data.totalRightBulletsFired++;
+                        }
 
                         Destroy(bullet, 0.05f);
 
