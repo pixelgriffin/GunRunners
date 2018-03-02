@@ -42,6 +42,8 @@ public class RoundTimer : MonoBehaviour {
             Statistics.Instance.SaveDataToReadableFile("runData_" + (MenuSettings.Instance.IS_EXPERIMENT ? "EXPERIMENT" : "TRIAL") + "_" + moveType + ".txt");
             Statistics.Instance.data = new Statistics.SaveData();
 
+            Statistics.Instance.allowDataEdit = true;
+
             SceneManager.LoadScene("Menu");
         }
 
