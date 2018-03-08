@@ -1,0 +1,16 @@
+03/07/2018 6:51 PM
+damageTaken=3
+totalLeftBulletsHit=116
+totalLeftBulletsFired=390
+totalRightBulletsHit=171
+totalRightBulletsFired=390
+totalBulletsCollected=600
+totalEnemiesDestroyed=47
+leftAccuracy=29.74359
+rightAccuracy=43.84615
+rightTiltTime=2.83333
+leftTiltTime=1.688892
+forwardTiltTime=26.8327
+backTiltTime=32.06344
+deadZoneTime=42.67782
+totalTimeSpentMoving=33.25027

@@ -19,17 +19,25 @@ public class TrackpadMovement : MonoBehaviour {
 
         Vector2 moveDirection = Vector2.zero;
 
-        //foreach (Hand hand in player.hands)
+        foreach (Hand hand in player.hands)
         {
-            Hand hand = player.hands[0];
-            if(hand.controller != null)
-                moveDirection += hand.controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad);
+            if (hand.controller != null)
+            {
+                Vector2 handValue = hand.controller.GetAxis(Valve.VR.EVRButtonId.k_EButton_SteamVR_Touchpad);
+
+                moveDirection += handValue;
+
+                if(moveDirection.magnitude > 1f)
+                {
+                    moveDirection.Normalize();
+                }
+            }
         }
 
         Debug.Log(moveDirection);
 
-        Vector3 forwardVector = player.hmdTransform.forward * (moveDirection.y * (MenuSettings.Instance.maxMoveSpeed / 2f) * Time.deltaTime);
-        Vector3 sideVector = player.hmdTransform.right * (moveDirection.x * (MenuSettings.Instance.maxMoveSpeed / 2f) * Time.deltaTime);
+        Vector3 forwardVector = player.hmdTransform.forward * (moveDirection.y * (MenuSettings.Instance.maxMoveSpeed) * Time.deltaTime);
+        Vector3 sideVector = player.hmdTransform.right * (moveDirection.x * (MenuSettings.Instance.maxMoveSpeed) * Time.deltaTime);
 
         forwardVector.y = 0;
         sideVector.y = 0;

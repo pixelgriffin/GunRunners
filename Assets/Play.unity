@@ -3821,7 +3821,7 @@ Transform:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1655839869}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 4, z: -36}
+  m_LocalPosition: {x: 0.955, y: 2.5, z: -35.543}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
   - {fileID: 26359600}
@@ -4388,6 +4388,29 @@ Prefab:
         type: 2}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[1].m_Arguments.m_ObjectArgumentAssemblyTypeName
       value: UnityEngine.Object, UnityEngine
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290736342744168, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.r
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290736342744168, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.g
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 114290736342744168, guid: 0d6afb91c5e1852478f320195ad12d1f,
+        type: 2}
+      propertyPath: m_Color.b
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 1608166198385992, guid: 0d6afb91c5e1852478f320195ad12d1f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1463695034444328, guid: 0d6afb91c5e1852478f320195ad12d1f, type: 2}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_ParentPrefab: {fileID: 100100000, guid: 0d6afb91c5e1852478f320195ad12d1f, type: 2}
