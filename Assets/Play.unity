@@ -2796,7 +2796,6 @@ GameObject:
   - component: {fileID: 1097287054}
   - component: {fileID: 1097287053}
   - component: {fileID: 1097287052}
-  - component: {fileID: 1097287055}
   m_Layer: 0
   m_Name: Cube
   m_TagString: Walkable
@@ -2875,21 +2874,6 @@ MeshFilter:
   m_PrefabInternal: {fileID: 0}
   m_GameObject: {fileID: 1097287050}
   m_Mesh: {fileID: 4300000, guid: bd411859289f9e5409a999e80c227ddf, type: 3}
---- !u!54 &1097287055
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_PrefabParentObject: {fileID: 0}
-  m_PrefabInternal: {fileID: 0}
-  m_GameObject: {fileID: 1097287050}
-  serializedVersion: 2
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_UseGravity: 0
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 0
-  m_CollisionDetection: 0
 --- !u!1 &1103987257
 GameObject:
   m_ObjectHideFlags: 0
