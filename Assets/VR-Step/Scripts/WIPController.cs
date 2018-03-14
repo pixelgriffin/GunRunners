@@ -156,10 +156,15 @@ namespace VRStep
 
             //if ((dot < (1f - MenuSettings.Instance.headDeadZoneMin) && dot > (1f - MenuSettings.Instance.headDeadZoneMax)))
             //{
-                velocityVector = dir * targetForwardVelocity;
+            velocityVector = dir * targetForwardVelocity;
+
+            if (Statistics.Instance.allowDataEdit)
+            {
+                //Statistics.Instance.data.totalDistanceMoved += dir.magnitude * targetForwardVelocity;
+            }
             //}
 
-			if (controllerType == ControllerType.RigidBody)
+            if (controllerType == ControllerType.RigidBody)
 			{
 				velocityVector.y = _rigidbody.velocity.y;
 				_rigidbody.velocity = velocityVector;

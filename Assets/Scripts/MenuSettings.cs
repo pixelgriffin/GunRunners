@@ -14,6 +14,7 @@ public class MenuSettings : SingletonComponent<MenuSettings> {
     public bool USE_TRACKPAD = false;
     public bool USE_TELEPORT = false;
     public bool USE_JOGGING = true;
+    public bool USE_TILT = false;
 
     public bool IS_EXPERIMENT = false;
 

@@ -23,6 +23,8 @@ public class Statistics : SingletonComponent<Statistics> {
         public float backTime;
         public float deadZoneTime;
         public float totalTimeSpentMoving;
+        public float totalDistanceMoved;
+        public float nauseaMeter;
     };
 
     public SaveData data;
@@ -56,6 +58,8 @@ public class Statistics : SingletonComponent<Statistics> {
             sw.WriteLine("backTiltTime=" + data.backTime);
             sw.WriteLine("deadZoneTime=" + data.deadZoneTime);
             sw.WriteLine("totalTimeSpentMoving=" + data.totalTimeSpentMoving);
+            sw.WriteLine("totalDistanceMoved=" + data.totalDistanceMoved);
+            sw.WriteLine("nauseaMeter=" + data.nauseaMeter);
         }
     }
 }

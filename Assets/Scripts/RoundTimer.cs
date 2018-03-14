@@ -15,6 +15,8 @@ public class RoundTimer : MonoBehaviour {
         textMesh = GetComponent<TextMesh>();
 
         timeLeft = minutes * 60f;
+
+        Statistics.Instance.allowDataEdit = true;
 	}
 	
 	void Update () {
@@ -25,7 +27,7 @@ public class RoundTimer : MonoBehaviour {
             timeLeft = 0;
             Statistics.Instance.allowDataEdit = false;
 
-            string moveType = "";
+            /*string moveType = "";
             if(MenuSettings.Instance.USE_JOGGING)
             {
                 moveType = "jogging";
@@ -42,9 +44,9 @@ public class RoundTimer : MonoBehaviour {
             Statistics.Instance.SaveDataToReadableFile("runData_" + (MenuSettings.Instance.IS_EXPERIMENT ? "EXPERIMENT" : "TRIAL") + "_" + moveType + ".txt");
             Statistics.Instance.data = new Statistics.SaveData();
 
-            Statistics.Instance.allowDataEdit = true;
+            Statistics.Instance.allowDataEdit = true;*/
 
-            SceneManager.LoadScene("Menu");
+            SceneManager.LoadScene("Submit");
         }
 
         int minsLeft = ((int)timeLeft / 60);

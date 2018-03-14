@@ -9,7 +9,8 @@ public class UpdateMovementType : MonoBehaviour {
     {
         JOGGING,
         TRACKPAD,
-        TELEPORT
+        TELEPORT,
+        TILT
     };
 
     public MovementType type;
@@ -31,16 +32,26 @@ public class UpdateMovementType : MonoBehaviour {
                     MenuSettings.Instance.USE_JOGGING = true;
                     MenuSettings.Instance.USE_TRACKPAD = false;
                     MenuSettings.Instance.USE_TELEPORT = false;
+                    MenuSettings.Instance.USE_TILT = false;
                     break;
                 case MovementType.TRACKPAD:
                     MenuSettings.Instance.USE_JOGGING = false;
                     MenuSettings.Instance.USE_TRACKPAD = true;
                     MenuSettings.Instance.USE_TELEPORT = false;
+                    MenuSettings.Instance.USE_TILT = false;
                     break;
                 case MovementType.TELEPORT:
                     MenuSettings.Instance.USE_JOGGING = false;
                     MenuSettings.Instance.USE_TRACKPAD = false;
                     MenuSettings.Instance.USE_TELEPORT = true;
+                    MenuSettings.Instance.USE_TILT = false;
+                    break;
+
+                case MovementType.TILT:
+                    MenuSettings.Instance.USE_JOGGING = false;
+                    MenuSettings.Instance.USE_TRACKPAD = false;
+                    MenuSettings.Instance.USE_TELEPORT = false;
+                    MenuSettings.Instance.USE_TILT = true;
                     break;
             }
         }

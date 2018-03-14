@@ -923,7 +923,14 @@ namespace Valve.VR.InteractionSystem
                 Vector3 playerFeetOffset = player.trackingOriginTransform.position - player.feetPositionGuess;
 
                 //if (InteractionManager.Instance.moveType == InteractionManager.MovementType.TELEPORT)
-                    player.trackingOriginTransform.position = teleportPosition + playerFeetOffset + new Vector3(0, 1f, 0);//This is the line that changes the player's position. TODO
+                Vector3 oldPos = player.trackingOriginTransform.position;
+
+                player.trackingOriginTransform.position = teleportPosition + playerFeetOffset + new Vector3(0, 1f, 0);//This is the line that changes the player's position. TODO
+
+                if(Statistics.Instance.allowDataEdit)
+                {
+                    //Statistics.Instance.data.totalDistanceMoved += (Vector3.Distance(oldPos, player.trackingOriginTransform.position));
+                }
                 //else
                 //    dashTo = teleportPosition + playerFeetOffset;
             }

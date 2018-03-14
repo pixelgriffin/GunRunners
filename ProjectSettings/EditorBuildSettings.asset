@@ -17,3 +17,6 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Play.unity
     guid: d726414c48b872a45b8bfe030a43ece9
+  - enabled: 1
+    path: Assets/Submit.unity
+    guid: f50a514f00c6a7a4c8903cd973a687b8

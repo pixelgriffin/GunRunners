@@ -46,6 +46,11 @@ public class TrackpadMovement : MonoBehaviour {
 
         if (Statistics.Instance.allowDataEdit)
         {
+            //Statistics.Instance.data.totalDistanceMoved += forwardVector.magnitude + sideVector.magnitude;
+        }
+
+        if (Statistics.Instance.allowDataEdit)
+        {
             if ((forwardVector + sideVector) != Vector3.zero)
             {
                 Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
