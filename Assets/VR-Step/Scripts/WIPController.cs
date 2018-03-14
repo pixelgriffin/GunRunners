@@ -125,11 +125,14 @@ namespace VRStep
 				_jumpCooldownTimer -= Time.deltaTime;
 			}
 
-            if (Statistics.Instance.allowDataEdit)
+            if (MenuSettings.Instance.USE_JOGGING)
             {
-                if (targetForwardVelocity > 0f)
+                if (Statistics.Instance.allowDataEdit)
                 {
-                    Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+                    if (targetForwardVelocity > 0f)
+                    {
+                        Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+                    }
                 }
             }
         }

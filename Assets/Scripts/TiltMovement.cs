@@ -58,9 +58,6 @@ public class TiltMovement : MonoBehaviour {
         if (ang <= 1f && ang > 0.5f)//45 degree angles from Y, 90 degrees total
         {
             dir = headForward;
-
-            if (Statistics.Instance.allowDataEdit)
-                Statistics.Instance.data.forwardTime += Time.deltaTime;
         }
         else if (ang <= 0.5f && ang > -0.5f)
         {
@@ -73,25 +70,19 @@ public class TiltMovement : MonoBehaviour {
             if (isRight > 0f)
             {
                 dir = headRight;
-
-                if (Statistics.Instance.allowDataEdit)
-                    Statistics.Instance.data.rightTime += Time.deltaTime;
             }
             else
             {
                 dir = -headRight;
-
-                if (Statistics.Instance.allowDataEdit)
-                    Statistics.Instance.data.leftTime += Time.deltaTime;
             }
         }
         else if (ang <= -0.5f && ang > -1f)
         {
             dir = -headForward;
-
-            if (Statistics.Instance.allowDataEdit)
-                Statistics.Instance.data.backTime += Time.deltaTime;
         }
+
+        if (Statistics.Instance.allowDataEdit)
+            Statistics.Instance.data.backTime += Time.deltaTime;
 
         return dir;
     }

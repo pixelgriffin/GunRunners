@@ -331,9 +331,13 @@ namespace Valve.VR.InteractionSystem
 
             realArcDistance = Mathf.Lerp(realArcDistance, arcDistance, arcGrowthRate * Time.deltaTime);
 
-            if(Statistics.Instance.allowDataEdit)
+            if (realArcDistance > 0f)
             {
-                Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+                if (Statistics.Instance.allowDataEdit)
+                {
+                    Debug.Log("MOVING TIME TELEPORT: " + realArcDistance + " > 0");
+                    Statistics.Instance.data.totalTimeSpentMoving += Time.deltaTime;
+                }
             }
 
             //TeleportMarkerBase hitTeleportMarker = null;
@@ -929,7 +933,7 @@ namespace Valve.VR.InteractionSystem
 
                 if(Statistics.Instance.allowDataEdit)
                 {
-                    //Statistics.Instance.data.totalDistanceMoved += (Vector3.Distance(oldPos, player.trackingOriginTransform.position));
+                    Statistics.Instance.data.totalDistanceMoved += (Vector3.Distance(oldPos, player.trackingOriginTransform.position));
                 }
                 //else
                 //    dashTo = teleportPosition + playerFeetOffset;

@@ -11,9 +11,12 @@ public class TrackDistanceMoved : MonoBehaviour {
 	}
 	
 	void Update () {
-        if(Statistics.Instance.allowDataEdit)
-            Statistics.Instance.data.totalDistanceMoved = Vector3.Distance(oldPos, this.transform.position);
+        if (!MenuSettings.Instance.USE_TELEPORT)
+        {
+            if (Statistics.Instance.allowDataEdit)
+                Statistics.Instance.data.totalDistanceMoved += Vector3.Distance(oldPos, this.transform.position);
 
-        oldPos = this.transform.position;
+            oldPos = this.transform.position;
+        }
 	}
 }
