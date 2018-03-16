@@ -1,18 +1,18 @@
-03/14/2018 11:47 AM
-damageTaken=70
-totalLeftBulletsHit=7
-totalLeftBulletsFired=41
-totalRightBulletsHit=11
-totalRightBulletsFired=39
-totalBulletsCollected=200
-totalEnemiesDestroyed=3
-leftAccuracy=17.07317
-rightAccuracy=28.20513
-rightTiltTime=0.5333334
-leftTiltTime=0.1555556
-forwardTiltTime=1.444447
-backTiltTime=1.453336
-deadZoneTime=1.566669
-totalTimeSpentMoving=7.516057
-totalDistanceMoved=33.06069
+03/15/2018 11:25 AM
+damageTaken=1
+totalLeftBulletsHit=77
+totalLeftBulletsFired=234
+totalRightBulletsHit=109
+totalRightBulletsFired=295
+totalBulletsCollected=560
+totalEnemiesDestroyed=31
+leftAccuracy=32.90598
+rightAccuracy=36.94915
+rightTiltTime=0
+leftTiltTime=0
+forwardTiltTime=0
+backTiltTime=2.919997
+deadZoneTime=1.300002
+totalTimeSpentMoving=29.82091
+totalDistanceMoved=192.4408
 nauseaMeter=0

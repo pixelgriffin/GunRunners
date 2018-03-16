@@ -369,9 +369,9 @@ MonoBehaviour:
   minForwardVelocity: 4
   dampingEnabled: 1
   dampingValue: 0.98
-  minStepTime: 0.25
-  maxStepTime: 1
-  stoppingStepTime: 1
+  minStepTime: 0.2
+  maxStepTime: 1.1
+  stoppingStepTime: 1.2
   rotateTowardsGaze: 1
   forwardTransform: {fileID: 1870931979}
   jumpEnabled: 0
